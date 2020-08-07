@@ -9,7 +9,6 @@ do
       PREVIOUS="pre_bug"
       CURRENT="bug"
       BUILD="failed"
-	  BUG_INTRO=$4
       ;;
     f)
       echo "Checking FIXES"
@@ -36,41 +35,23 @@ ROOT_DIR="/bugswarm-sandbox/$MAIN_DIR"
 TAG=$1
 DIR=$2
 ID=$3
+BUG_INTRO=$4
 SANDBOX_PROJ="$ROOT_DIR/$DIR/$ID"
-echo "$SANDBOX_PROJ"
 
 cd home/travis/build/$BUILD/*/*;
-
-CHANGED_FILES=($(git diff --name-only HEAD~"$((BUG_INTRO+1))" HEAD~"$((BUG_INTRO))"))
+echo "$TAG"
+CHANGED_FILES=($(git diff --name-only HEAD~"$((BUG_INTRO+1))" HEAD~"$BUG_INTRO"))
 
 for file in ${CHANGED_FILES[@]}
 do
-	echo $file
+	directory="$(dirname $file)"
+
+	git cat-file -e HEAD~"$((BUG_INTRO+1))":$file 2> /dev/null && \
+	mkdir -p "$SANDBOX_PROJ/$PREVIOUS/$directory" && \
+	git show HEAD~"$((BUG_INTRO+1))":$file > $SANDBOX_PROJ/$PREVIOUS/$file
+	
+	git cat-file -e HEAD~"$BUG_INTRO":$file 2> /dev/null && \
+	mkdir -p "$SANDBOX_PROJ/$CURRENT/$directory" && \
+	git show HEAD~"$BUG_INTRO":$file > $SANDBOX_PROJ/$CURRENT/$file
 done
-
-
-#if [[ $NR_CHANGED -le $FILES_CHANGED  ]]
-#then
-#	CHANGES="$(git diff --numstat HEAD~"$((BUG_INTRO+1))" HEAD~"$((BUG_INTRO))")"
-#	while IFS=$'\t' read -r added deleted file
-#	do
-#		if [[ $added -le $LINES_ADDED && $deleted -le $LINES_DELETED ]]
-#		then
-#			echo "[PINNED] $TAG"
-#                       echo "files: $NR_CHANGED | added: $added | deleted: $deleted"
-#			#echo "$BEFORE_DIR/$(dirname $file)"
-#			#echo "$NOW_DIR/$(dirname $file)"
-#			if [[ "$SAVE_FILES" = true ]]
-#			then
-#				#echo "Saving files"
-#				#sudo mkdir -p "$BEFORE_DIR/$(dirname $file)"
-#				#sudo mkdir -p "$NOW_DIR/$(dirname $file)"
-#				#git show HEAD~1:$file | sudo tee "$BEFORE_DIR/$file" > /dev/null
-#				#git show HEAD:$file | sudo tee "$NOW_DIR/$file" > /dev/null
-#				sudo mkdir -p "$SANDBOX_PROJ"
-#				sudo cp -r . "$SANDBOX_PROJ"
-#			fi
-#		fi
-#	done <<< "$CHANGES"
-#fi
 
