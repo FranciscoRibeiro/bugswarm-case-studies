@@ -1,0 +1,38 @@
+language: java
+
+sudo: false
+dist: trusty
+
+branches:
+  except:
+  - gh-pages
+
+before_install:
+  - unset _JAVA_OPTIONS
+
+install: echo "The default Travis install script is being skipped!"
+
+matrix:
+  include:
+    # Java 9
+    - env: TARGET='-Pjava9'
+      jdk: openjdk9
+    # Java 10
+    - env: TARGET='-Pjava10'
+      jdk: openjdk10
+    # Java 11
+    - env: TARGET='-Pjava11'
+      jdk: openjdk11
+    # Java 12
+    - env: TARGET='-Pjava11'
+      jdk: openjdk12
+    # Java 13
+    - env: TARGET='-Pjava11'
+      jdk: openjdk-ea
+      script:
+        - ./mvnw install ${TARGET} -DskipTests=true -Dnet.bytebuddy.experimental=true -Dmaven.javadoc.skip=true -Dnet.bytebuddy.test.ci=true -pl '!byte-buddy-gradle-plugin'
+        - ./mvnw jacoco:prepare-agent verify jacoco:report ${TARGET} -Dnet.bytebuddy.experimental=true -Pintegration -Dnet.bytebuddy.test.ci=true -pl '!byte-buddy-gradle-plugin'
+
+script:
+  - ./mvnw install ${TARGET} -DskipTests=true -Dmaven.javadoc.skip=true -Dnet.bytebuddy.test.ci=true -pl '!byte-buddy-gradle-plugin'
+  - ./mvnw jacoco:prepare-agent verify jacoco:report ${TARGET} -Pintegration -Dnet.bytebuddy.test.ci=true -pl '!byte-buddy-gradle-plugin'

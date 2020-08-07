@@ -1,0 +1,15 @@
+include 'stagemonitor-alerting',
+		'stagemonitor-benchmark',
+		'stagemonitor-core',
+		'stagemonitor-dispatcher',
+		'stagemonitor-ehcache',
+		'stagemonitor-jdbc',
+		'stagemonitor-jvm',
+		'stagemonitor-logging',
+		'stagemonitor-os',
+		'stagemonitor-requestmonitor',
+		'stagemonitor-web',
+		'stagemonitor-grafana-elasticsearch',
+		'stagemonitor-zipkin',
+		'stagemonitor-vertx'
+
