@@ -1,0 +1,3 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/traccar/traccar/164537300/pre_bug/src/org/traccar/helper/DateBuilder.java;bugswarm-sandbox/bugs/traccar/traccar/164537300/bug/src/org/traccar/helper/DateBuilder.java;1;[InsertOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/traccar/traccar/164537300/pre_bug/src/org/traccar/model/Position.java;bugswarm-sandbox/bugs/traccar/traccar/164537300/bug/src/org/traccar/model/Position.java;1;[InsertOperation];"[]";[];[];[]

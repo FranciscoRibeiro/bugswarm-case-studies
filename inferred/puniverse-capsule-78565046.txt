@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/puniverse/capsule/78565046/pre_bug/capsule/src/main/java/Capsule.java;bugswarm-sandbox/bugs/puniverse/capsule/78565046/bug/capsule/src/main/java/Capsule.java;2;[InsertOperation, InsertOperation];"[]";[];[];[]

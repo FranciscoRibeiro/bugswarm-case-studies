@@ -1,0 +1,3 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/traccar/traccar/191125670/pre_bug/src/org/traccar/CopyAttributesHandler.java;bugswarm-sandbox/bugs/traccar/traccar/191125670/bug/src/org/traccar/CopyAttributesHandler.java;1;[UpdateOperation];"[CR_outside_criteria(from=attributesString.split("" ""),to=attributesString.split(""[ ,]""))]";[ConstantReplacement];[36-36];[60-62]
+Error,bugswarm-sandbox/bugs/traccar/traccar/191125670/pre_bug/src/org/traccar/MainEventHandler.java,bugswarm-sandbox/bugs/traccar/traccar/191125670/bug/src/org/traccar/MainEventHandler.java

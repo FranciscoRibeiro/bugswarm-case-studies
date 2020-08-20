@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/raphw/byte-buddy/225708654/pre_bug/byte-buddy-agent/src/main/java/net/bytebuddy/agent/ByteBuddyAgent.java;bugswarm-sandbox/bugs/raphw/byte-buddy/225708654/bug/byte-buddy-agent/src/main/java/net/bytebuddy/agent/ByteBuddyAgent.java;7;[DeleteOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation, MoveOperation];"[]";[];[];[]

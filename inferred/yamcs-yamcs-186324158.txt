@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/yamcs/yamcs/186324158/pre_bug/yamcs-core/src/test/java/org/yamcs/AbstractIntegrationTest.java;bugswarm-sandbox/bugs/yamcs/yamcs/186324158/bug/yamcs-core/src/test/java/org/yamcs/AbstractIntegrationTest.java;9;[DeleteOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation];"[]";[];[];[]

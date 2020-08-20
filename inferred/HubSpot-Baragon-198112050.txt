@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/HubSpot/Baragon/198112050/pre_bug/BaragonCore/src/main/java/com/hubspot/baragon/models/BaragonGroup.java;bugswarm-sandbox/bugs/HubSpot/Baragon/198112050/bug/BaragonCore/src/main/java/com/hubspot/baragon/models/BaragonGroup.java;0;[];"[]";[];[];[]

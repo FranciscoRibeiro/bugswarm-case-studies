@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/ontop/ontop/87451222/pre_bug/quest-owlapi3/src/test/java/it/unibz/krdb/obda/reformulation/tests/NPDTest.java;bugswarm-sandbox/bugs/ontop/ontop/87451222/bug/quest-owlapi3/src/test/java/it/unibz/krdb/obda/reformulation/tests/NPDTest.java;1;[InsertOperation];"[]";[];[];[]

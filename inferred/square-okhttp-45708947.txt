@@ -1,0 +1,3 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/square/okhttp/45708947/pre_bug/okhttp-tests/src/test/java/okhttp3/internal/http/ThreadInterruptTest.java;bugswarm-sandbox/bugs/square/okhttp/45708947/bug/okhttp-tests/src/test/java/okhttp3/internal/http/ThreadInterruptTest.java;4;[DeleteOperation, DeleteOperation, MoveOperation, MoveOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okhttp/45708947/pre_bug/okhttp/src/main/java/okhttp3/internal/publicsuffix/PublicSuffixDatabase.java;bugswarm-sandbox/bugs/square/okhttp/45708947/bug/okhttp/src/main/java/okhttp3/internal/publicsuffix/PublicSuffixDatabase.java;1;[InsertOperation];"[]";[];[];[]

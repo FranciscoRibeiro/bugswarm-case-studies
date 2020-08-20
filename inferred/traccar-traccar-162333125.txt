@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/traccar/traccar/162333125/pre_bug/src/org/traccar/protocol/CellocatorProtocol.java;bugswarm-sandbox/bugs/traccar/traccar/162333125/bug/src/org/traccar/protocol/CellocatorProtocol.java;3;[InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]

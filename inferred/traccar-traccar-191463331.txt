@@ -1,0 +1,3 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/traccar/traccar/191463331/pre_bug/src/org/traccar/protocol/H02ProtocolDecoder.java;bugswarm-sandbox/bugs/traccar/traccar/191463331/bug/src/org/traccar/protocol/H02ProtocolDecoder.java;2;[DeleteOperation, MoveOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/traccar/traccar/191463331/pre_bug/test/org/traccar/protocol/H02ProtocolDecoderTest.java;bugswarm-sandbox/bugs/traccar/traccar/191463331/bug/test/org/traccar/protocol/H02ProtocolDecoderTest.java;1;[InsertOperation];"[]";[];[];[]

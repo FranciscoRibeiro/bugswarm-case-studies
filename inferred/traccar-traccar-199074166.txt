@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+Error,bugswarm-sandbox/bugs/traccar/traccar/199074166/pre_bug/src/org/traccar/protocol/TeltonikaProtocolDecoder.java,bugswarm-sandbox/bugs/traccar/traccar/199074166/bug/src/org/traccar/protocol/TeltonikaProtocolDecoder.java

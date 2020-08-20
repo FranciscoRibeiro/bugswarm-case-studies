@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/Nukkit/Nukkit/190118605/pre_bug/src/main/java/cn/nukkit/event/player/PlayerInteractEntityEvent.java;bugswarm-sandbox/bugs/Nukkit/Nukkit/190118605/bug/src/main/java/cn/nukkit/event/player/PlayerInteractEntityEvent.java;2;[InsertOperation, InsertOperation];"[]";[];[];[]

@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+Error,bugswarm-sandbox/bugs/ProjectKorra/ProjectKorra/80564293/pre_bug/src/com/projectkorra/projectkorra/PKListener.java,bugswarm-sandbox/bugs/ProjectKorra/ProjectKorra/80564293/bug/src/com/projectkorra/projectkorra/PKListener.java

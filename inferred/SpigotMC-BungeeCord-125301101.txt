@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/SpigotMC/BungeeCord/125301101/pre_bug/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_8.java;bugswarm-sandbox/bugs/SpigotMC/BungeeCord/125301101/bug/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_8.java;6;[DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]

@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/joyent/java-manta/112738580/pre_bug/java-manta-client/src/main/java/com/joyent/manta/client/HttpHelper.java;bugswarm-sandbox/bugs/joyent/java-manta/112738580/bug/java-manta-client/src/main/java/com/joyent/manta/client/HttpHelper.java;8;[InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation];"[]";[];[];[]

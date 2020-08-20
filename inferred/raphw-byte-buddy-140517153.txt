@@ -1,0 +1,2 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/raphw/byte-buddy/140517153/pre_bug/byte-buddy-dep/src/main/java/net/bytebuddy/dynamic/ClassFileLocator.java;bugswarm-sandbox/bugs/raphw/byte-buddy/140517153/bug/byte-buddy-dep/src/main/java/net/bytebuddy/dynamic/ClassFileLocator.java;2;[DeleteOperation, MoveOperation];"[NVMD(deleted call to=of(java.lang.ClassLoader))]";[NonVoidMethodDeletion];[300-300];[24-80]

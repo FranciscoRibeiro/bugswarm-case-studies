@@ -1,0 +1,12 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/HubSpot/Singularity/85747656/pre_bug/SingularityBase/src/main/java/com/hubspot/mesos/json/MesosTaskStatisticsObject.java;bugswarm-sandbox/bugs/HubSpot/Singularity/85747656/bug/SingularityBase/src/main/java/com/hubspot/mesos/json/MesosTaskStatisticsObject.java;10;[UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation];"[ArgTypeC(from=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_nr_periods"")
+double cpusNrPeriods,to=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_nr_periods"")
+long cpusNrPeriods), ArgTypeC(from=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_nr_throttled"")
+double cpusNrThrottled,to=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_nr_throttled"")
+long cpusNrThrottled), ArgTypeC(from=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_system_time_secs"")
+float cpusSystemTimeSecs,to=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_system_time_secs"")
+double cpusSystemTimeSecs), ArgTypeC(from=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_throttled_time_secs"")
+float cpusThrottledTimeSecs,to=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_throttled_time_secs"")
+double cpusThrottledTimeSecs), ArgTypeC(from=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_user_time_secs"")
+float cpusUserTimeSecs,to=@com.fasterxml.jackson.annotation.JsonProperty(""cpus_user_time_secs"")
+double cpusUserTimeSecs)]";[ArgumentTypeChange, ArgumentTypeChange, ArgumentTypeChange, ArgumentTypeChange, ArgumentTypeChange];[22-22, 23-23, 24-24, 25-25, 26-26];[69-74, 71-76, 75-79, 78-82, 73-77]

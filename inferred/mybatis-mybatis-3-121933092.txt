@@ -1,0 +1,4 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/mybatis/mybatis-3/121933092/pre_bug/src/main/java/org/apache/ibatis/annotations/TypeDiscriminator.java;bugswarm-sandbox/bugs/mybatis/mybatis-3/121933092/bug/src/main/java/org/apache/ibatis/annotations/TypeDiscriminator.java;0;[];"[]";[];[];[]
+bugswarm-sandbox/bugs/mybatis/mybatis-3/121933092/pre_bug/src/main/java/org/apache/ibatis/annotations/Result.java;bugswarm-sandbox/bugs/mybatis/mybatis-3/121933092/bug/src/main/java/org/apache/ibatis/annotations/Result.java;0;[];"[]";[];[];[]
+bugswarm-sandbox/bugs/mybatis/mybatis-3/121933092/pre_bug/src/main/java/org/apache/ibatis/annotations/Arg.java;bugswarm-sandbox/bugs/mybatis/mybatis-3/121933092/bug/src/main/java/org/apache/ibatis/annotations/Arg.java;0;[];"[]";[];[];[]

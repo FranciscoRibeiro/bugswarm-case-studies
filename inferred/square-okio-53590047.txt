@@ -1,0 +1,48 @@
+"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/SegmentPool.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/SegmentPool.java;18;[UpdateOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation];"[VVR(from=synchronized(this) {
+    if (next != null) {
+        okio.Segment result = next;
+        next = result.next;
+        result.next = null;
+        byteCount -= Segment.SIZE;
+        return result;
+    }
+},to=synchronized(okio.SegmentPool.class) {
+    if (okio.SegmentPool.next != null) {
+        okio.Segment result = okio.SegmentPool.next;
+        okio.SegmentPool.next = result.next;
+        result.next = null;
+        okio.SegmentPool.byteCount -= Segment.SIZE;
+        return result;
+    }
+}), VVR(from=synchronized(this) {
+    if ((byteCount + Segment.SIZE) > okio.SegmentPool.MAX_SIZE) {
+        return;
+    }
+    byteCount += Segment.SIZE;
+    segment.next = next;
+    segment.pos = segment.limit = 0;
+    next = segment;
+},to=synchronized(okio.SegmentPool.class) {
+    if ((okio.SegmentPool.byteCount + Segment.SIZE) > okio.SegmentPool.MAX_SIZE) {
+        return;
+    }
+    okio.SegmentPool.byteCount += Segment.SIZE;
+    segment.next = okio.SegmentPool.next;
+    segment.pos = segment.limit = 0;
+    okio.SegmentPool.next = segment;
+}), SMI(inserted=static long byteCount;)]";[VarToVarReplacement, VarToVarReplacement, StaticModifierInsertion];[37-39, 52-53, 0-0];[19-35, 19-35, 0-0]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/Segment.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/Segment.java;51;[UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation];"[VVR(from=before.data,to=shareFrom.limit), VVR(from=bSize,to=byteCount), VVR(from=before,to=prefix), VVR(from=before,to=shareFrom), VVR(from=aSize,to=byteCount), VVR(from=after,to=prefix), VVR(from=(prev.limit - prev.pos),to=(okio.Segment.SIZE - prev.limit)), AOI(from=sink.limit,to=(sink.limit + byteCount))]";[VarToVarReplacement, VarToVarReplacement, VarToVarReplacement, VarToVarReplacement, VarToVarReplacement, VarToVarReplacement, VarToVarReplacement, ArithmeticOperatorInsertion];[90-90, 99-99, 93-93, 90-90, 98-98, 98-98, 112-126, 122-139];[35-45, 16-20, 17-22, 35-40, 36-40, 55-59, 23-33, 11-32]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/ByteString.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/ByteString.java;14;[UpdateOperation, UpdateOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation, MoveOperation];"[COR(from=(o == this) || ((o instanceof okio.ByteString) && java.util.Arrays.equals(((okio.ByteString) (o)).data, data)),to=((o instanceof okio.ByteString) && (((okio.ByteString) (o)).size() == data.length)) && ((okio.ByteString) (o)).rangeEquals(0, data, 0, data.length))]";[ConditionalOperatorReplacement];[297-297];[12-93]
+Error,bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/Buffer.java,bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/Buffer.java
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/GzipSink.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/GzipSink.java;0;[];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/Okio.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/Okio.java;1;[UpdateOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/Util.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/Util.java;1;[InsertOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/InflaterSource.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/InflaterSource.java;0;[];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/main/java/okio/DeflaterSink.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/main/java/okio/DeflaterSink.java;1;[UpdateOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/test/java/okio/TestUtil.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/test/java/okio/TestUtil.java;3;[InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/test/java/okio/BufferedSourceTest.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/test/java/okio/BufferedSourceTest.java;0;[];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/test/java/okio/GzipSinkTest.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/test/java/okio/GzipSinkTest.java;0;[];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/test/java/okio/ByteStringTest.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/test/java/okio/ByteStringTest.java;38;[UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation, MoveOperation, MoveOperation];"[VVR(from=roundTrippedObject,to=byteString), VVR(from=roundTrippedObject,to=byteString), VMD(deleted call to=writeObject(java.lang.Object)), VMD(deleted call to=writeObject(java.lang.Object)), VMD(deleted call to=writeObject(java.lang.Object)), VMD(deleted call to=writeObject(java.lang.Object)), VMD(deleted call to=writeObject(java.lang.Object)), VMD(deleted call to=writeObject(java.lang.Object))]";[VarToVarReplacement, VarToVarReplacement, VoidMethodDeletion, VoidMethodDeletion, VoidMethodDeletion, VoidMethodDeletion, VoidMethodDeletion, VoidMethodDeletion];[278-278, 297-297, 269-269, 270-270, 271-271, 288-288, 289-289, 290-290];[9-26, 9-26, 5-30, 5-30, 5-29, 5-30, 5-30, 5-29]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/test/java/okio/BufferTest.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/test/java/okio/BufferTest.java;7;[UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, InsertOperation, InsertOperation];"[]";[];[];[]
+bugswarm-sandbox/bugs/square/okio/53590047/pre_bug/okio/src/test/java/okio/BufferedSinkTest.java;bugswarm-sandbox/bugs/square/okio/53590047/bug/okio/src/test/java/okio/BufferedSinkTest.java;0;[];"[]";[];[];[]
