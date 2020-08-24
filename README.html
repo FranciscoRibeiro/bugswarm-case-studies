@@ -1,0 +1,49 @@
+<h1 id="bugswarm-experiments">Bugswarm Experiments</h1>
+<h2 id="case-studies-with-real-bugs">Case Studies with Real Bugs</h2>
+<p>There are 5 case studies consisting of real bugs which we think are interesting to explore. The corresponding image IDs are (and project repositories):</p>
+<ul>
+<li><strong>tananaev-traccar-64783123</strong> - <a href="https://github.com/traccar/traccar"><em>Traccar</em></a></li>
+<li><strong>mybatis-mybatis-3-117115624</strong> - <a href="https://github.com/mybatis/mybatis-3"><em>MyBatis</em></a></li>
+<li><strong>zxing-zxing-139981065</strong> - <a href="https://github.com/zxing/zxing"><em>ZXing</em></a></li>
+<li><strong>apache-commons-lang-224267191</strong> - <a href="https://github.com/apache/commons-lang"><em>Apache Commons Lang</em></a></li>
+<li><strong>openpnp-openpnp-110833060</strong> - <a href="https://github.com/openpnp/openpnp"><em>OpenPnP</em></a></li>
+</ul>
+<p>To replicate what was documented in the paper, an interactive session with a container should be created. To do this, run the following command with any of the previous <code>&lt;image_id&gt;</code>:</p>
+<pre><code>    docker run -it bugswarm/images:&lt;image_id&gt;</code></pre>
+<h3 id="checking-the-fix">Checking the fix</h3>
+<p>When you are interacting with a container, if you wish to see the <em>diff</em> which fixed that bug, you can go to directory <code>/home/travis/build/passed</code> and run:</p>
+<pre><code>    git diff HEAD~1 HEAD</code></pre>
+<p>This will show and highlight what changed from the previous commit (buggy) to the current commit (fixed).</p>
+<h3 id="checking-the-bug">Checking the bug</h3>
+<p>Similarly, you can run the same <code>git diff HEAD~1 HEAD</code> command in directory <code>/home/travis/build/failed</code> to analyze the <em>diff</em> which <strong>introduced</strong> the bug. This will work for all the 5 use cases we report here.</p>
+<p>However, this may not be the case for every image in the Bugswarm repository. Bugswarm does a good job isolating the point in the project’s version history in which the bug was fixed (<code>passed</code> directory). However, it cannot be assumed that the commit which introduced the bug is the one immediately preceding the latest commit in <code>failed</code>. The file <code>info/bug_intro.txt</code> lists (for each bugswarm image) the offset which we need to go back to in order to correctly check the point when the project’s build stopped working/passing. As an example, the line for the first case study:</p>
+<pre><code>    tananaev-traccar-64783123 traccar/traccar 64783122 0</code></pre>
+<p>has <code>0</code> as the offset (last field). If we execute:</p>
+<pre><code>    git diff HEAD~&lt;offset+1&gt; HEAD~&lt;offset&gt;</code></pre>
+<p>we get the <em>diff</em> that highlights the changes that introduce the bug in the first place.</p>
+<p>The 5 cases we report here all have an offset of <code>0</code>.</p>
+<h3 id="generating-the-sfl-report">Generating the SFL report</h3>
+<p>The tool <a href="https://github.com/GZoltar/gzoltar"><em>GZoltar</em></a> was used to generate the SFL report for each bug. Each of the 5 use cases has a <code>pom.xml</code> file that was properly configured in order to include the <em>GZoltar</em> plugin for this analysis. They are located in the <code>pom_files</code> directory. To copy them inside the respective docker container, we first need the ID of the already running container. This ID can be retrieved with <code>docker ps</code>. Then, to make the file available inside the container:</p>
+<pre><code>    docker cp pom_files/&lt;image_id&gt;/pom-xml &lt;container_id&gt;:&lt;path_to_failed&gt;</code></pre>
+<p>As an example, let’s imagine we are running a container for the <em>Traccar</em> project and that <code>docker ps</code> tells us that the container ID is <code>bbafb934713f</code>. The above command would translate to:</p>
+<pre><code>    docker cp pom_files/tananaev-traccar-64783123/pom-xml bbafb934713f:/home/travis/build/failed/tananaev/traccar</code></pre>
+<p>Then, <strong>from inside the running container</strong> after changing to the project’s directory:</p>
+<pre><code>    /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 clean test-compile
+    /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 -P sufire gzoltar:prepare-agent test
+    /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 gzoltar:fl-report</code></pre>
+<p>After this, the generated report will be in <code>target/site/gzoltar/sfl/txt/ochiai.ranking.csv</code></p>
+<p><strong>Note:</strong> When running a container for <code>openpnp-openpnp-110833060</code>, <code>JAVA_HOME</code> needs to be set to use Java 8. As such, run <code>JAVA_HOME=/usr/lib/jvm/java-8-oracle/</code> before any of the above <code>mvn</code> commands.</p>
+<h3 id="inferring-mutations-with-morpheus">Inferring mutations with <em>Morpheus</em></h3>
+<p>To analyze the changes for each commit inducing the bug in a more efficient way, the modified files were extracted from their containers to allow for offline analysis. The script that does this is <code>all_containers_scripts/all_changed_files.sh</code></p>
+<p>For each bug, the modified files can be located in the corresponding <code>pre_bug</code> and <code>bug</code> directories. As an example, for the first case study:</p>
+<ul>
+<li><code>bugswarm-sandbox/bugs/traccar/traccar/64783122/pre_bug</code> — contains the files <strong>before</strong> the bug</li>
+<li><code>bugswarm-sandbox/bugs/traccar/traccar/64783122/bug</code> — contains the <strong>buggy version</strong> of the files</li>
+</ul>
+<p><em>Morpheus</em> can then be used to analyze the changes made to the files and infer the mutation operators behind the modifications, like this:</p>
+<pre><code>    java -jar morpheus/morpheus.jar &lt;before_file&gt; &lt;buggy_file&gt;</code></pre>
+<p>As an example, to infer the semantics of the changes responsible for introducing the bug in the first case study:</p>
+<pre><code>    java -jar morpheus/morpheus.jar \
+    bugswarm-sandbox/bugs/traccar/traccar/64783122/pre_bug/src/org/traccar/protocol/CastelProtocolDecoder.java \
+    bugswarm-sandbox/bugs/traccar/traccar/64783122/bug/src/org/traccar/protocol/CastelProtocolDecoder.java</code></pre>
+<p><em>Morpheus</em> writes to standard output. The results from these experiments were saved in the <code>inferred</code> directory. As such, the output from the previous example command can be seen in <code>inferred/traccar-traccar-64783122.txt</code></p>
