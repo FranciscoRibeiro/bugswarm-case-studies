@@ -57,7 +57,10 @@ Then, **from inside the running container** after changing to the project's dire
 
 After this, the generated report will be in `target/site/gzoltar/sfl/txt/ochiai.ranking.csv`
 
-**Note:** When running a container for `openpnp-openpnp-110833060`, `JAVA_HOME` needs to be set to use Java 8. As such, run `JAVA_HOME=/usr/lib/jvm/java-8-oracle/` before any of the above `mvn` commands.
+**Notes:** 
+
+1. When running a container for `openpnp-openpnp-110833060`, `JAVA_HOME` needs to be set to use Java 8. As such, run `JAVA_HOME=/usr/lib/jvm/java-8-oracle/` before any of the above `mvn` commands.
+2. The bug in `zxing-zxing-139981065` prevents it from compiling. As such, the SFL report cannot be generated for this case study.
 
 ### Inferring mutations with *Morpheus*
 

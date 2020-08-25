@@ -32,7 +32,11 @@
     /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 -P sufire gzoltar:prepare-agent test
     /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 gzoltar:fl-report</code></pre>
 <p>After this, the generated report will be in <code>target/site/gzoltar/sfl/txt/ochiai.ranking.csv</code></p>
-<p><strong>Note:</strong> When running a container for <code>openpnp-openpnp-110833060</code>, <code>JAVA_HOME</code> needs to be set to use Java 8. As such, run <code>JAVA_HOME=/usr/lib/jvm/java-8-oracle/</code> before any of the above <code>mvn</code> commands.</p>
+<p><strong>Notes:</strong></p>
+<ol type="1">
+<li>When running a container for <code>openpnp-openpnp-110833060</code>, <code>JAVA_HOME</code> needs to be set to use Java 8. As such, run <code>JAVA_HOME=/usr/lib/jvm/java-8-oracle/</code> before any of the above <code>mvn</code> commands.</li>
+<li>The bug in <code>zxing-zxing-139981065</code> prevents it from compiling. As such, the SFL report cannot be generated for this case study.</li>
+</ol>
 <h3 id="inferring-mutations-with-morpheus">Inferring mutations with <em>Morpheus</em></h3>
 <p>To analyze the changes for each commit inducing the bug in a more efficient way, the modified files were extracted from their containers to allow for offline analysis. The script that does this is <code>all_containers_scripts/all_changed_files.sh</code></p>
 <p>For each bug, the modified files can be located in the corresponding <code>pre_bug</code> and <code>bug</code> directories. As an example, for the first case study:</p>
