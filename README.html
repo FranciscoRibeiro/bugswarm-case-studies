@@ -1,4 +1,44 @@
 <h1 id="bugswarm-experiments">Bugswarm Experiments</h1>
+<h2 id="repository-organization">Repository organization</h2>
+<p>The root directory has two <code>json</code> files:</p>
+<ul>
+<li><code>1.1.3-bugswarm.json</code>: Full bugswarm dataset as of version 1.1.3 which serves as the base for this study</li>
+<li><code>filtered-bugswarm.json</code>: Obtained after filtering the full bugswarm dataset by running <code>data_scripts/filter_dataset.py</code></li>
+</ul>
+<p>The purpose of each directory in this repository:</p>
+<ul>
+<li><code>bugswarm-sandbox</code>: Serves as the bind mount point between the host and a container (<code>docker run -v $(pwd)/bugswarm-sandbox:/bugswarm-sandbox</code> …). As such, scripts or data files that should be made available to the container should be placed here. Same thing goes for files generated inside a container that we want to make available in the host.</li>
+<li><code>bugswarm-sandbox/bugs</code>: Stores all the changed files from the buggy commits of all the bugswarm images considered in this study. Each project has a subdirectory, which lists the different possible IDs it their own directory and then splits files in <code>pre_bug</code> and <code>bug</code> directories (see <a href="#inferring-mutations-with-morpheus">Inferring mutations with <em>Morpheus</em></a>)</li>
+<li><code>all_containers_scripts</code>: Scripts that run an individual task (typically represented by a script in <code>bugswarm-sandbox</code>) over every bugswarm image listed in <code>bug_intro.txt</code></li>
+<li><code>build_history</code>: json files with the build history of the bugswarm images considered in this study</li>
+<li><code>data_scripts</code>: Scripts that generate or manipulate data outside the scope of a running container</li>
+<li><code>inferred</code>: Text files listing the mutation operators that got inferred by Morpheus for every bugswarm image considered in this study</li>
+<li><code>info</code>: General information data files</li>
+<li><code>morpheus</code>: Holds the Morpheus version used in this study</li>
+<li><code>pom_files</code>: Holds the <code>pom.xml</code> files of each of the 5 case studies in the paper. These should be copied inside the respective container in order to run the experiments (see <a href="#generating-the-sfl-report">Generating the SFL Report</a>)</li>
+<li><code>sfl_reports</code>: SFL reports generated for the case studies</li>
+</ul>
+<p>Scripts description:</p>
+<ul>
+<li><code>all_containers_scripts</code>:
+<ul>
+<li><code>all_changed_files.sh</code>: Extracts all the changed files from the buggy commit for every bugswarm image</li>
+<li><code>all_metrics.sh</code>: Gathers file and line metrics from the bug and fix of every bugswarm image. Used to generate <code>info/metrics.csv</code></li>
+</ul></li>
+<li><code>bugswarm-sandbox</code>: (expected to be executed inside a container)
+<ul>
+<li><code>changed_files.sh</code>: Extracts all the changed files from the buggy commit (<code>-b</code> switch) or the fix commit (<code>-f</code> switch)</li>
+<li><code>metrics.sh</code>: Gathers file and line metrics from the bug (<code>-b</code>) or the fix (<code>-f</code>). If <code>-b</code> is supplied then an argument specifying the number of commits to go back should be passed (<code>bug_intro.txt</code> lists these offsets). Gathered metrics are nr of files changed, nr of lines added and deleted</li>
+</ul></li>
+<li><code>data_scripts</code>:
+<ul>
+<li><code>all_build_history.py</code>: Retrieves the build history for every considered bugswarm image. Should be passed the argument <code>filtered-bugswarm.json</code></li>
+<li><code>build_history.sh</code>: Retrieves the build history for a specific image</li>
+<li><code>bug_intro.py</code>: Analyzes each retrieved build history and looks for the commit in which the bug was introduced, i.e. when then build started failing. Used to generate <code>info/bug_intro.txt</code></li>
+<li><code>filter_dataset.py</code>: Filters the full bugswarm dataset (<code>1.1.3-bugswarm.json</code>) and produces <code>filtered-bugswarm.json</code>. The filtering criteria is that an image should represent a project with Java source code, the fix was obtained by modifying source code (instead of changing configurations or tests) and the build ID is unique, i.e. only one image per build is considered</li>
+<li><code>infer_mut_ops.sh</code>: Uses <em>Morpheus</em> to analyze the buggy commits and produce the files in <code>inferred</code> with all the detected mutation operators for each bugswarm image</li>
+</ul></li>
+</ul>
 <h2 id="case-studies-with-real-bugs">Case Studies with Real Bugs</h2>
 <p>There are 5 case studies consisting of real bugs which we think are interesting to explore. The corresponding image IDs are (and project repositories):</p>
 <ul>
@@ -32,6 +72,7 @@
     /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 -P sufire gzoltar:prepare-agent test
     /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 gzoltar:fl-report</code></pre>
 <p>After this, the generated report will be in <code>target/site/gzoltar/sfl/txt/ochiai.ranking.csv</code></p>
+<p>For convenience, the generated SFL reports are available in the <code>sfl_reports</code> directory.</p>
 <p><strong>Notes:</strong></p>
 <ol type="1">
 <li>When running a container for <code>openpnp-openpnp-110833060</code>, <code>JAVA_HOME</code> needs to be set to use Java 8. As such, run <code>JAVA_HOME=/usr/lib/jvm/java-8-oracle/</code> before any of the above <code>mvn</code> commands.</li>

@@ -1,5 +1,40 @@
 # Bugswarm Experiments
 
+## Repository organization
+The root directory has two `json` files:
+
+- `1.1.3-bugswarm.json`: Full bugswarm dataset as of version 1.1.3 which serves as the base for this study
+- `filtered-bugswarm.json`: Obtained after filtering the full bugswarm dataset by running `data_scripts/filter_dataset.py`
+
+The purpose of each directory in this repository:
+
+- `bugswarm-sandbox`: Serves as the bind mount point between the host and a container (`docker run -v $(pwd)/bugswarm-sandbox:/bugswarm-sandbox` ...). As such, scripts or data files that should be made available to the container should be placed here. Same thing goes for files generated inside a container that we want to make available in the host.
+- `bugswarm-sandbox/bugs`: Stores all the changed files from the buggy commits of all the bugswarm images considered in this study. Each project has a subdirectory, which lists the different possible IDs it their own directory and then splits files in `pre_bug` and `bug` directories (see [Inferring mutations with *Morpheus*](#inferring-mutations-with-morpheus))
+- `all_containers_scripts`: Scripts that run an individual task (typically represented by a script in `bugswarm-sandbox`) over every bugswarm image listed in `bug_intro.txt`
+- `build_history`: json files with the build history of the bugswarm images considered in this study
+- `data_scripts`: Scripts that generate or manipulate data outside the scope of a running container
+- `inferred`: Text files listing the mutation operators that got inferred by Morpheus for every bugswarm image considered in this study
+- `info`: General information data files
+- `morpheus`: Holds the Morpheus version used in this study
+- `pom_files`: Holds the `pom.xml` files of each of the 5 case studies in the paper. These should be copied inside the respective container in order to run the experiments (see [Generating the SFL Report](#generating-the-sfl-report))
+- `sfl_reports`: SFL reports generated for the case studies
+
+Scripts description:
+
+- `all_containers_scripts`:
+	- `all_changed_files.sh`: Extracts all the changed files from the buggy commit for every bugswarm image
+	- `all_metrics.sh`: Gathers file and line metrics from the bug and fix of every bugswarm image. Used to generate `info/metrics.csv`
+- `bugswarm-sandbox`: (expected to be executed inside a container)
+	- `changed_files.sh`: Extracts all the changed files from the buggy commit (`-b` switch) or the fix commit (`-f` switch)
+	- `metrics.sh`: Gathers file and line metrics from the bug (`-b`) or the fix (`-f`). If `-b` is supplied then an argument specifying the number of commits to go back should be passed (`bug_intro.txt` lists these offsets). Gathered metrics are nr of files changed, nr of lines added and deleted
+- `data_scripts`:
+	- `all_build_history.py`: Retrieves the build history for every considered bugswarm image. Should be passed the argument `filtered-bugswarm.json`
+	- `build_history.sh`: Retrieves the build history for a specific image
+	- `bug_intro.py`: Analyzes each retrieved build history and looks for the commit in which the bug was introduced, i.e. when then build started failing. Used to generate `info/bug_intro.txt`
+	- `filter_dataset.py`: Filters the full bugswarm dataset (`1.1.3-bugswarm.json`) and produces `filtered-bugswarm.json`. The filtering criteria is that an image should represent a project with Java source code, the fix was obtained by modifying source code (instead of changing configurations or tests) and the build ID is unique, i.e. only one image per build is considered
+	- `infer_mut_ops.sh`: Uses *Morpheus* to analyze the buggy commits and produce the files in `inferred` with all the detected mutation operators for each bugswarm image
+
+
 ## Case Studies with Real Bugs
 There are 5 case studies consisting of real bugs which we think are interesting to explore. The corresponding image IDs are (and project repositories):
 
@@ -56,6 +91,8 @@ Then, **from inside the running container** after changing to the project's dire
         /usr/local/maven-3.2.5/bin/mvn -Dhttps.protocols=TLSv1.2 gzoltar:fl-report
 
 After this, the generated report will be in `target/site/gzoltar/sfl/txt/ochiai.ranking.csv`
+
+For convenience, the generated SFL reports are available in the `sfl_reports` directory.
 
 **Notes:** 
 
