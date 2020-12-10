@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/chewiebug/GCViewer/152998029/pre_bug/src/main/java/com/tagtraum/perf/gcviewer/view/AboutDialog.java;bugswarm-sandbox/bugs/chewiebug/GCViewer/152998029/bug/src/main/java/com/tagtraum/perf/gcviewer/view/AboutDialog.java;1;[InsertOperation];"[]";[];[];[]

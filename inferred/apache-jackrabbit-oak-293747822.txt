@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/apache/jackrabbit-oak/293747822/pre_bug/oak-segment-tar/src/test/java/org/apache/jackrabbit/oak/segment/InitializerTest.java;bugswarm-sandbox/bugs/apache/jackrabbit-oak/293747822/bug/oak-segment-tar/src/test/java/org/apache/jackrabbit/oak/segment/InitializerTest.java;4;[InsertOperation, InsertOperation, InsertOperation, MoveOperation];"[]";[];[];[]

@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/HubTurbo/HubTurbo/65187012/pre_bug/src/main/java/browserview/BrowserComponent.java;bugswarm-sandbox/bugs/HubTurbo/HubTurbo/65187012/bug/src/main/java/browserview/BrowserComponent.java;8;[UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, UpdateOperation, DeleteOperation];"[]";[];[];[]

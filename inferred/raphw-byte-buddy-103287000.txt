@@ -1,3 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-Timeout,bugswarm-sandbox/bugs/raphw/byte-buddy/103287000/pre_bug/byte-buddy-dep/src/main/java/net/bytebuddy/description/type/TypeDescription.java,bugswarm-sandbox/bugs/raphw/byte-buddy/103287000/bug/byte-buddy-dep/src/main/java/net/bytebuddy/description/type/TypeDescription.java
-bugswarm-sandbox/bugs/raphw/byte-buddy/103287000/pre_bug/byte-buddy-dep/src/test/java/net/bytebuddy/description/type/AbstractTypeDescriptionTest.java;bugswarm-sandbox/bugs/raphw/byte-buddy/103287000/bug/byte-buddy-dep/src/test/java/net/bytebuddy/description/type/AbstractTypeDescriptionTest.java;1;[DeleteOperation];"[]";[];[];[]

@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-Error,bugswarm-sandbox/bugs/raphw/byte-buddy/174535088/pre_bug/byte-buddy-benchmark/src/main/java/net/bytebuddy/benchmark/ClassByExtensionBenchmark.java,bugswarm-sandbox/bugs/raphw/byte-buddy/174535088/bug/byte-buddy-benchmark/src/main/java/net/bytebuddy/benchmark/ClassByExtensionBenchmark.java

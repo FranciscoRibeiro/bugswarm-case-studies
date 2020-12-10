@@ -1,3 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-Timeout,bugswarm-sandbox/bugs/raphw/byte-buddy/145495027/pre_bug/byte-buddy-dep/src/main/java/net/bytebuddy/dynamic/scaffold/TypeWriter.java,bugswarm-sandbox/bugs/raphw/byte-buddy/145495027/bug/byte-buddy-dep/src/main/java/net/bytebuddy/dynamic/scaffold/TypeWriter.java
-bugswarm-sandbox/bugs/raphw/byte-buddy/145495027/pre_bug/byte-buddy-dep/src/test/java/net/bytebuddy/dynamic/scaffold/TypeWriterDefaultTest.java;bugswarm-sandbox/bugs/raphw/byte-buddy/145495027/bug/byte-buddy-dep/src/test/java/net/bytebuddy/dynamic/scaffold/TypeWriterDefaultTest.java;1;[InsertOperation];"[]";[];[];[]

@@ -1,3 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/junkdog/artemis-odb/71816514/pre_bug/artemis/src/main/java/com/artemis/EntityTransmuter.java;bugswarm-sandbox/bugs/junkdog/artemis-odb/71816514/bug/artemis/src/main/java/com/artemis/EntityTransmuter.java;3;[InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]
-bugswarm-sandbox/bugs/junkdog/artemis-odb/71816514/pre_bug/artemis/src/test/java/com/artemis/EntityTransmuterTest.java;bugswarm-sandbox/bugs/junkdog/artemis-odb/71816514/bug/artemis/src/test/java/com/artemis/EntityTransmuterTest.java;4;[InsertOperation, InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]

@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/ontop/ontop/76305781/pre_bug/reformulation-core/src/main/java/it/unibz/krdb/obda/owlrefplatform/core/sql/SQLGenerator.java;bugswarm-sandbox/bugs/ontop/ontop/76305781/bug/reformulation-core/src/main/java/it/unibz/krdb/obda/owlrefplatform/core/sql/SQLGenerator.java;2;[InsertOperation, MoveOperation];"[]";[];[];[]

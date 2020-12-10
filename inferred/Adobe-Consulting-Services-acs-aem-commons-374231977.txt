@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/Adobe-Consulting-Services/acs-aem-commons/374231977/pre_bug/bundle/src/main/java/com/adobe/acs/commons/mcp/util/package-info.java;bugswarm-sandbox/bugs/Adobe-Consulting-Services/acs-aem-commons/374231977/bug/bundle/src/main/java/com/adobe/acs/commons/mcp/util/package-info.java;0;[];"[]";[];[];[]

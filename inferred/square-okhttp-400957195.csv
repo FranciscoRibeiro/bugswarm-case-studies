@@ -1,0 +1,2 @@
+bugswarm-sandbox/bugs/square/okhttp/400957195/pre_bug/okhttp-tests/src/test/java/okhttp3/HeadersTest.java;bugswarm-sandbox/bugs/square/okhttp/400957195/bug/okhttp-tests/src/test/java/okhttp3/HeadersTest.java;okhttp3$HeadersTest;okhttp3$HeadersTest;1;[InsertOperation];"[]";[];[];[];[];[]
+bugswarm-sandbox/bugs/square/okhttp/400957195/pre_bug/okhttp/src/main/java/okhttp3/Headers.java;bugswarm-sandbox/bugs/square/okhttp/400957195/bug/okhttp/src/main/java/okhttp3/Headers.java;okhttp3$Headers;okhttp3$Headers;1;[InsertOperation];"[]";[];[];[];[];[]

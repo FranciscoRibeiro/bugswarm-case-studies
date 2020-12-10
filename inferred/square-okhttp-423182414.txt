@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/square/okhttp/423182414/pre_bug/mockwebserver/src/main/java/okhttp3/mockwebserver/RecordedRequest.java;bugswarm-sandbox/bugs/square/okhttp/423182414/bug/mockwebserver/src/main/java/okhttp3/mockwebserver/RecordedRequest.java;7;[UpdateOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation];"[]";[];[];[]

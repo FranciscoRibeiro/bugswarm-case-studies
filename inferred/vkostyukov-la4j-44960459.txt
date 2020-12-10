@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/vkostyukov/la4j/44960459/pre_bug/src/main/java/org/la4j/matrix/Matrices.java;bugswarm-sandbox/bugs/vkostyukov/la4j/44960459/bug/src/main/java/org/la4j/matrix/Matrices.java;1;[DeleteOperation];"[]";[];[];[]

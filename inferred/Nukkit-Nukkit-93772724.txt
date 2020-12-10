@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/Nukkit/Nukkit/93772724/pre_bug/src/main/java/cn/nukkit/entity/data/StringEntityData.java;bugswarm-sandbox/bugs/Nukkit/Nukkit/93772724/bug/src/main/java/cn/nukkit/entity/data/StringEntityData.java;0;[];"[]";[];[];[]

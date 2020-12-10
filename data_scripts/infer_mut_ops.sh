@@ -7,10 +7,10 @@ INFERRED="inferred"
 for bug in $(find $BUGS -mindepth 3 -maxdepth 3)
 do
 	echo "$bug"
-	inferred_txt="$(echo $bug | sed -e "s|$BUGS/||" | sed -e "s|/|-|g").txt"
+	inferred_txt="$(echo $bug | sed -e "s|$BUGS/||" | sed -e "s|/|-|g").csv"
 	if [[ -d $bug/pre_bug ]]
 	then
-		echo "\"Mutant ID\";\"Nr AST Transformations\";\"AST Transformations\";\"Overview Mutation Operators\";\"Inferred Mutation Operators\";\"Start End Lines\";\"Start End Columns\"" > "$INFERRED/$inferred_txt"
+		#echo "\"Mutant ID\";\"Nr AST Transformations\";\"AST Transformations\";\"Overview Mutation Operators\";\"Inferred Mutation Operators\";\"Start End Lines\";\"Start End Columns\"" > "$INFERRED/$inferred_txt"
 		java_sources=($(find $bug/pre_bug -name "*\.java" | sed -e "s|^$bug/pre_bug/||"))
 		for file in ${java_sources[@]}
 		do

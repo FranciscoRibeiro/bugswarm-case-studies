@@ -1,3 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/Whiley/WhileyCompiler/74141579/pre_bug/src/main/java/wyc/io/WhileyFileParser.java;bugswarm-sandbox/bugs/Whiley/WhileyCompiler/74141579/bug/src/main/java/wyc/io/WhileyFileParser.java;1;[DeleteOperation];"[]";[];[];[]
-bugswarm-sandbox/bugs/Whiley/WhileyCompiler/74141579/pre_bug/src/test/java/wyc/testing/AllValidTest.java;bugswarm-sandbox/bugs/Whiley/WhileyCompiler/74141579/bug/src/test/java/wyc/testing/AllValidTest.java;3;[InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]

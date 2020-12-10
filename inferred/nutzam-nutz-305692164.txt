@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/nutzam/nutz/305692164/pre_bug/src/org/nutz/mvc/ActionInfo.java;bugswarm-sandbox/bugs/nutzam/nutz/305692164/bug/src/org/nutz/mvc/ActionInfo.java;1;[DeleteOperation];"[SD(deleted=injectName = (null == injectName) ? parent.injectName : injectName)]";[StatementDeletion];[97-97];[9-73]

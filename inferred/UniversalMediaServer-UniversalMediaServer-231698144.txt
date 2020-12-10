@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/UniversalMediaServer/UniversalMediaServer/231698144/pre_bug/src/main/java/net/pms/util/FileWatcher.java;bugswarm-sandbox/bugs/UniversalMediaServer/UniversalMediaServer/231698144/bug/src/main/java/net/pms/util/FileWatcher.java;0;[];"[]";[];[];[]

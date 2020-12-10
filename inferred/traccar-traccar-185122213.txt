@@ -1,3 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/traccar/traccar/185122213/pre_bug/src/org/traccar/api/ObjectMapperProvider.java;bugswarm-sandbox/bugs/traccar/traccar/185122213/bug/src/org/traccar/api/ObjectMapperProvider.java;4;[DeleteOperation, DeleteOperation, DeleteOperation, InsertOperation];"[RV_outside_criteria(from=return mapper,to=return org.traccar.Context.getObjectMapper())]";[ReturnValue];[30-35];[16-40]
-bugswarm-sandbox/bugs/traccar/traccar/185122213/pre_bug/src/org/traccar/Context.java;bugswarm-sandbox/bugs/traccar/traccar/185122213/bug/src/org/traccar/Context.java;1;[InsertOperation];"[]";[];[];[]

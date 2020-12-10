@@ -1,8 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/yamcs/yamcs/108219381/pre_bug/yamcs-core/src/main/java/org/yamcs/YProcessor.java;bugswarm-sandbox/bugs/yamcs/yamcs/108219381/bug/yamcs-core/src/main/java/org/yamcs/YProcessor.java;24;[UpdateOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation];"[VVR(from=if (parameterCacheAll) {
-    parameterCacheEnabled = true;
-},to=if (cacheAll) {
-    enabled = true;
-})]";[VarToVarReplacement];[264-275];[16-32]
-bugswarm-sandbox/bugs/yamcs/yamcs/108219381/pre_bug/yamcs-core/src/main/java/org/yamcs/parameter/ParameterCache.java;bugswarm-sandbox/bugs/yamcs/yamcs/108219381/bug/yamcs-core/src/main/java/org/yamcs/parameter/ParameterCache.java;0;[];"[]";[];[];[]
-bugswarm-sandbox/bugs/yamcs/yamcs/108219381/pre_bug/yamcs-core/src/main/java/org/yamcs/parameter/ParameterRequestManagerImpl.java;bugswarm-sandbox/bugs/yamcs/yamcs/108219381/bug/yamcs-core/src/main/java/org/yamcs/parameter/ParameterRequestManagerImpl.java;10;[UpdateOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, InsertOperation, MoveOperation];"[NVMD(deleted call to=isParameterCacheEnabled())]";[NonVoidMethodDeletion];[87-87];[12-42]

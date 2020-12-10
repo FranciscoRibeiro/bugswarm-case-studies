@@ -1,0 +1,6 @@
+bugswarm-sandbox/bugs/raphw/byte-buddy/174535088/pre_bug/byte-buddy-benchmark/src/main/java/net/bytebuddy/benchmark/ClassByExtensionBenchmark.java;bugswarm-sandbox/bugs/raphw/byte-buddy/174535088/bug/byte-buddy-benchmark/src/main/java/net/bytebuddy/benchmark/ClassByExtensionBenchmark.java;net.bytebuddy.benchmark$ClassByExtensionBenchmark;net.bytebuddy.benchmark$ClassByExtensionBenchmark;9;[UpdateOperation, UpdateOperation, UpdateOperation, DeleteOperation, DeleteOperation, InsertOperation, InsertOperation, MoveOperation, MoveOperation];"[SD(deleted=javassist.util.proxy.ProxyFactory.classLoaderProvider = new javassist.util.proxy.ProxyFactory.ClassLoaderProvider() {
+    @java.lang.Override
+    public java.lang.ClassLoader get(javassist.util.proxy.ProxyFactory proxyFactory) {
+        return newClassLoader();
+    }
+})]";[StatementDeletion];[167-172];[9-10];[164-189];[5-25]

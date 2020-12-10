@@ -1,0 +1,2 @@
+bugswarm-sandbox/bugs/traccar/traccar/164537300/pre_bug/src/org/traccar/helper/DateBuilder.java;bugswarm-sandbox/bugs/traccar/traccar/164537300/bug/src/org/traccar/helper/DateBuilder.java;org.traccar.helper$DateBuilder;org.traccar.helper$DateBuilder;1;[InsertOperation];"[]";[];[];[];[];[]
+bugswarm-sandbox/bugs/traccar/traccar/164537300/pre_bug/src/org/traccar/model/Position.java;bugswarm-sandbox/bugs/traccar/traccar/164537300/bug/src/org/traccar/model/Position.java;org.traccar.model$Position;org.traccar.model$Position;1;[InsertOperation];"[]";[];[];[];[];[]

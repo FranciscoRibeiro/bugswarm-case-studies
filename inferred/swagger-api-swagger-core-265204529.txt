@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/swagger-api/swagger-core/265204529/pre_bug/modules/swagger-annotations/src/main/java/io/swagger/oas/annotations/security/SecurityScheme.java;bugswarm-sandbox/bugs/swagger-api/swagger-core/265204529/bug/modules/swagger-annotations/src/main/java/io/swagger/oas/annotations/security/SecurityScheme.java;0;[];"[]";[];[];[]

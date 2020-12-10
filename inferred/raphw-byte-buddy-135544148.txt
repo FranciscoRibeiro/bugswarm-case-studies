@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-Timeout,bugswarm-sandbox/bugs/raphw/byte-buddy/135544148/pre_bug/byte-buddy-dep/src/main/java/net/bytebuddy/agent/builder/AgentBuilder.java,bugswarm-sandbox/bugs/raphw/byte-buddy/135544148/bug/byte-buddy-dep/src/main/java/net/bytebuddy/agent/builder/AgentBuilder.java

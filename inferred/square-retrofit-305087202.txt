@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/square/retrofit/305087202/pre_bug/retrofit/src/main/java/retrofit2/BuiltInConverters.java;bugswarm-sandbox/bugs/square/retrofit/305087202/bug/retrofit/src/main/java/retrofit2/BuiltInConverters.java;3;[InsertOperation, InsertOperation, InsertOperation];"[]";[];[];[]

@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/petergeneric/stdlib/203910182/pre_bug/guice/hibernate/src/test/java/com/peterphi/std/guice/hibernate/largetable/LargeTableQueryTest.java;bugswarm-sandbox/bugs/petergeneric/stdlib/203910182/bug/guice/hibernate/src/test/java/com/peterphi/std/guice/hibernate/largetable/LargeTableQueryTest.java;1;[InsertOperation];"[]";[];[];[]

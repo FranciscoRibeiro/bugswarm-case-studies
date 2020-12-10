@@ -1,2 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/junkdog/artemis-odb/80146604/pre_bug/artemis/src/main/java/com/artemis/Aspect.java;bugswarm-sandbox/bugs/junkdog/artemis-odb/80146604/bug/artemis/src/main/java/com/artemis/Aspect.java;1;[InsertOperation];"[]";[];[];[]

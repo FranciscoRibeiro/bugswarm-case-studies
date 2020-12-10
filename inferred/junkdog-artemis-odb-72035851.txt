@@ -1,4 +1,0 @@
-"Mutant ID";"Nr AST Transformations";"AST Transformations";"Overview Mutation Operators";"Inferred Mutation Operators";"Start End Lines";"Start End Columns"
-bugswarm-sandbox/bugs/junkdog/artemis-odb/72035851/pre_bug/artemis/src/main/java/com/artemis/EntitySystem.java;bugswarm-sandbox/bugs/junkdog/artemis-odb/72035851/bug/artemis/src/main/java/com/artemis/EntitySystem.java;1;[DeleteOperation];"[]";[];[];[]
-bugswarm-sandbox/bugs/junkdog/artemis-odb/72035851/pre_bug/artemis/src/main/java/com/artemis/Aspect.java;bugswarm-sandbox/bugs/junkdog/artemis-odb/72035851/bug/artemis/src/main/java/com/artemis/Aspect.java;0;[];"[]";[];[];[]
-bugswarm-sandbox/bugs/junkdog/artemis-odb/72035851/pre_bug/artemis/src/main/java/com/artemis/BaseSystem.java;bugswarm-sandbox/bugs/junkdog/artemis-odb/72035851/bug/artemis/src/main/java/com/artemis/BaseSystem.java;1;[InsertOperation];"[]";[];[];[]
