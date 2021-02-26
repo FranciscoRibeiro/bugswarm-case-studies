@@ -1,0 +1,5 @@
+traccar,https://github.com/traccar/traccar,6883ecf8462e26f63d2709426c2cacf5dd318c49,traccar-traccar-64783122.csv,src
+mybatis-3,https://github.com/mybatis/mybatis-3,5da14eb064a04cd54dbefe6e8f516a191111e87b,mybatis-mybatis-3-117115622.csv,src/main/java
+zxing,https://github.com/zxing/zxing,08e5431d995a88d443c06406520e62e2e0d02034i,zxing-zxing-139981064.csv,core/src/main/java
+commons-lang,https://github.com/apache/commons-lang,314b6b56bec4af56dba667d66a25c1613f4bc800i,apache-commons-lang-224267188.csv,src/main/java
+openpnp,https://github.com/openpnp/openpnp,0143f8ebe02d584081b720a2e65d38878ad54f2f,openpnp-openpnp-110833059.csv,src/main/java
