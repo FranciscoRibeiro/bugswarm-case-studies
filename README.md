@@ -99,7 +99,7 @@ For convenience, the generated SFL reports are available in the `sfl_reports` di
 1. When running a container for `openpnp-openpnp-110833060`, `JAVA_HOME` needs to be set to use Java 8. As such, run `JAVA_HOME=/usr/lib/jvm/java-8-oracle/` before any of the above `mvn` commands.
 2. The bug in `zxing-zxing-139981065` prevents it from compiling. As such, the SFL report cannot be generated for this case study.
 
-### Inferring mutations with *Morpheus*
+### Inferring mutations with [*Morpheus*](https://github.com/FranciscoRibeiro/morpheus)
 
 To analyze the changes for each commit inducing the bug in a more efficient way, the modified files were extracted from their containers to allow for offline analysis. The script that does this is `all_containers_scripts/all_changed_files.sh`
 
@@ -119,4 +119,36 @@ As an example, to infer the semantics of the changes responsible for introducing
         bugswarm-sandbox/bugs/traccar/traccar/64783122/bug/src/org/traccar/protocol/CastelProtocolDecoder.java
 
 *Morpheus* writes to standard output. The results from these experiments were saved in the `inferred` directory. As such, the output from the previous example command can be seen in `inferred/traccar-traccar-64783122.txt`
+
+There is a quicker way to recreate the previous example without such a detailed command. The bug in question is `traccar/traccar/64783122`, so we could execute:
+
+		bash data_scripts/run_morpheus.sh bugswarm-sandbox/bugs/traccar/traccar/64783122
+
+### Repairing the case studies
+
+We implemented a [mutation-based repair tool](https://github.com/FranciscoRibeiro/auto_repairer) which can interpret the information produced by *Morpheus*.
+
+If one does not wish to run an interactive session with a container, the script `download_case_studies.sh` can be used to download the GitHub repository of each case study's corresponding project. Furthermore, this script also checks out the buggy commit for each case study, which are then available in the `case_studies` directory.
+
+Still using the previous case study as an example, we can perform the following steps to generate the patches for it (assumes we downloaded the project in question):
+
+		cd case_studies/traccar
+		classpath="$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q)"
+
+The previous command extracts the project's classpath. It is important to provide this information to the repair tool, as it needs to calculate expression types when applying mutations. By not providing the full classpath, the tool may not be able to calculate the type of some expressions and thus stop it from generating every possible patch.
+
+As an example, let us execute the repair tool using the strategy that considers both lines and columns where mutations were inferred (see the [repair tool's repo](https://github.com/FranciscoRibeiro/auto_repairer) for more details about each repair strategy and other arguments):
+
+		java -cp "$classpath:auto_repairer/auto_repairer.jar" MainKt \
+			case_studies/traccar \
+			case_studies/traccar/src \
+			generated_patches/traccar/ms \
+			-ms \
+			inferred/traccar-traccar-64783122.csv
+
+To execute the described steps and generate the patches for every case study at once:
+
+		bash data_scripts/generate_patches.sh
+
+Note that the `generated_patches` directory is already populated with the candidate patches the repair tool generated, as we describe in the case studies report. Executing the script deletes these patches and recreates them by running the repair tool with different strategies. 
 
