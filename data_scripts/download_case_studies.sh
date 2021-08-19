@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while IFS="," read -ra
+while IFS="," read -ra fields
 do
 	proj="${fields[0]}"; repo="${fields[1]}"; commit="${fields[2]}";
 	git clone "$repo" case_studies/"$proj"
